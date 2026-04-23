@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Tudo Sobre Google Glass</title>
     <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+    <link rel="stylesheet" type="text/css" href="_css/form.css"/>
 </head>
 <body>
 <script language="JavaScript" src="_javascript/funcoes.js"></script>
@@ -18,8 +19,7 @@
         <img id="icone" src="_imagens/contato.png" alt="contato"/>
         <nav id="menu">
             <h1>Menu Principal</h1>
-            <ul >
-
+            <ul>
                 <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
                 <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
                 <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
@@ -28,43 +28,115 @@
             </ul>
         </nav>
     </header>
-Fale Conosco > Contato
-Formulário de Contato
-por Gustavo Guanabara
-Atualizado em 01/Maio/2013
+    <section id="corpo-full">
+        <article id="noticia-principal">
+            <header id="cabecalho-artigo">
+                <hgroup>
+                    <h3>Glass > Contato</h3>
+                    <h1>Formulário de Contato</h1>
+                    <h2>por Gustavo Guanabara</h2>
+                    <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+                </hgroup>
+            </header>
+            <form id="fContato" method="post">
+                <fieldset id="usuario">
+                    <legend>Identificação do Usuário</legend>
+                    <p>
+                        <label for="cNome">Nome:</label>
+                        <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome completo"/>
+                    </p>
+                    <p>
+                        <label for="cPassword">Senha:</label>
+                        <input type="password" name="tPassword" id="cPassword" size="8" maxlength="8" placeholder="8 dígitos"/>
+                    </p>
+                    <p>
+                        <label for="cMail">E-mail:</label>
+                        <input type="email" name="tMail" id="cMail" size="20" maxlength="40" placeholder="nome@exemplo.com"/>
+                    </p>
+                    <fieldset id="sexo">
+                        <legend>Sexo:</legend>
+                        <label for="cMasc">
+                            <input type="radio" name="cSexo" id="cMasc" checked/>
+                            Masculino
+                        </label>
+                        <label for="cFem">
+                            <input type="radio" name="cSexo" id="cFem"/>
+                            Feminino
+                        </label>
+                    </fieldset>
+                    <p>
+                        <label for="cNasc">Data de Nascimento:</label>
+                        <input type="date" name="tNasc" id="cNasc"/>
+                    </p>
+                </fieldset>
 
-Identificação do Usuário
-    Nome:
-    Senha:
-    E-mail:
-    Sexo:
-        - Masculino
-        - Feminino
-    Data de Nascimento:
+                <fieldset id="endereco">
+                    <legend>Endereço do Usuário</legend>
+                    <p>
+                        <label for="cRua">Logradouro:</label>
+                        <input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, avenida ou travessa"/>
+                    </p>
+                    <p>
+                        <label for="cNum">Número:</label>
+                        <input type="number" name="tNum" id="cNum" min="0" max="99999" placeholder="123"/>
+                    </p>
+                    <p>
+                        <label for="cEst">Estado:</label>
+                        <input type="text" name="tEst" id="cEst" size="2" maxlength="2" placeholder="UF"/>
+                    </p>
+                    <p>
+                        <label for="cCid">Cidade:</label>
+                        <input type="text" name="tCid" id="cCid" size="20" maxlength="40" placeholder="Sua cidade"/>
+                    </p>
+                </fieldset>
 
-Endereço do Usuário
-    Logradouro:
-    Número:
-    Estado:
-    Cidade:
+                <fieldset id="mensagem">
+                    <legend>Mensagem do Usuário</legend>
+                    <p>
+                        <label for="cUrg">Grau de Urgência:</label>
+                        <select name="tUrg" id="cUrg">
+                            <option value="baixa">Baixa</option>
+                            <option value="media" selected>Média</option>
+                            <option value="alta">Alta</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="cMsg">Mensagem:</label>
+                        <textarea name="tMsg" id="cMsg" cols="45" rows="5" placeholder="Escreva sua mensagem aqui"></textarea>
+                    </p>
+                </fieldset>
 
-Mensagem do Usuário
-    Grau de Urgência:
-    Mensagem:
+                <fieldset id="pedido">
+                    <legend>Quero um Google Glass</legend>
+                    <p class="controle-check">
+                        <label for="cPed">
+                            <input type="checkbox" name="tPed" id="cPed"/>
+                            Gostaria de adquirir um Google Glass quando disponível
+                        </label>
+                    </p>
+                    <p>
+                        <label for="cCor">Cor:</label>
+                        <input type="color" name="tCor" id="cCor" value="#000000"/>
+                    </p>
+                    <p>
+                        <label for="cQtd">Quantidade:</label>
+                        <input type="number" name="tQtd" id="cQtd" min="0" max="5" value="0"/>
+                    </p>
+                    <p>
+                        <label for="cTot">Preço Total: R$</label>
+                        <input type="text" name="tTot" id="cTot" value="0,00" readonly/>
+                    </p>
+                </fieldset>
 
-Quero um Google Glass
-    Gostaria de adquirir um Google Glass quando disponível
-    Cor:
-    Quantidade:
-    Preço Total: R$
-
-
-[BOTÃO ENVIAR]
-<footer id="rodape">
-    <p>Copyright&copy; 2013 - by Gustavo Guanabara <br/>
-        <a href="https://facebook.com.br" target="_blank"> Facebook</a> |
-        <a href="https://x.com/home" target="_blank"> Twitter</a></p>
-</footer>
+                <input type="submit" value="Enviar Mensagem"/>
+            </form>
+        </article>
+    </section>
+    <footer id="rodape">
+        <p>Copyright&copy; 2013 - by Gustavo Guanabara <br/>
+            <a href="https://facebook.com.br" target="_blank"> Facebook</a> |
+            <a href="https://x.com/home" target="_blank"> Twitter</a></p>
+    </footer>
 </div>
 </body>
 </html>
