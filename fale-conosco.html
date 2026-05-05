@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns="http://www.w3.org/1999/html">
+<html lang="pt-br" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -38,7 +38,7 @@
                     <h3 class="direita">Atualizado em 01/Maio/2013</h3>
                 </hgroup>
             </header>
-            <form id="fContato" method="post">
+            <form id="fContato" method="post" action="">
                 <fieldset id="usuario">
                     <legend>Identificação do Usuário</legend>
                     <p>
@@ -82,11 +82,28 @@
                     </p>
                     <p>
                         <label for="cEst">Estado:</label>
-                        <input type="text" name="tEst" id="cEst" size="2" maxlength="2" placeholder="UF"/>
+                        <select name="tEst" id="cEst" >
+                            <optgroup label="Região Sudeste">
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="SP" selected>São Paulo</option>
+                                <option value="MG">Minas Gerais</option>
+                            </optgroup>
+                            <optgroup label="Região Sul">
+                                <option value="PR">Paraná</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="RS">Rio Grande do sul</option>
+                            </optgroup>
+                        </select>
                     </p>
                     <p>
                         <label for="cCid">Cidade:</label>
-                        <input type="text" name="tCid" id="cCid" size="20" maxlength="40" placeholder="Sua cidade"/>
+                        <input type="text" name="tCid" id="cCid" size="20" maxlength="40" placeholder="Sua cidade" list="cidades"/>
+                        <datalist id="cidades">
+                            <option value="Rio de Janeiro"></option>
+                            <option value="Nova Iguaçu"></option>
+                            <option value="Niterói"></option>
+                            <option value="Belford Roxo"></option>
+                        </datalist>
                     </p>
                 </fieldset>
 
@@ -94,11 +111,7 @@
                     <legend>Mensagem do Usuário</legend>
                     <p>
                         <label for="cUrg">Grau de Urgência:</label>
-                        <select name="tUrg" id="cUrg">
-                            <option value="baixa">Baixa</option>
-                            <option value="media" selected>Média</option>
-                            <option value="alta">Alta</option>
-                        </select>
+                        Min <input name="tUrg" id="cUrg" min="0" max="10" type="range" step="2"/> Max
                     </p>
                     <p>
                         <label for="cMsg">Mensagem:</label>
